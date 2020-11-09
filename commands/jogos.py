@@ -492,7 +492,7 @@ class jogos(Cog):
 
     @guild_only()
     @command()
-    async def casar(self, ctx, target: Optional[Member]):
+    async def casar(self, ctx, target: Member = None):
 
         ref = db.reference("bot-seven")
         canal = ref.child(f"config/{ctx.guild.id}/{ctx.channel.id}/jogos")
@@ -510,6 +510,7 @@ class jogos(Cog):
         if final == "true":
 
             user = self.client.db.userglobal.find_one({"user_id": ctx.author.id})
+            user2 = self.client.db.userglobal.find_one({"user_id": target.id})
 
             if target is None:
 
@@ -532,55 +533,47 @@ class jogos(Cog):
 
                 await ctx.send(f"> {ctx.author.mention}", embed=embed)
 
-            elif user["casal"] == target.id:
+            elif user["casal"] == user2["casal"]:
 
                 embed=Embed(title="Os dois ja estão casados",
                         color=ctx.author.color,)
 
                 await ctx.send(f"> {ctx.author.mention}", embed=embed)
 
-            else:
+            elif (user["status"] == "solteiro") and (user["casal"] == "null"):
 
-                if user["status"] == "solteiro":
+                embed=Embed(title=f"`{ctx.author.name}` esta pedindo a(o) `{target.name}` em casamento",
+                            description="Para aceitar o casamento, reaja em ate `60s`",
+                            color=ctx.author.color)
 
-                    embed=Embed(title=f"`{ctx.author.name}` esta pedindo a(o) `{target.name}` em casamento",
-                                description="Para aceitar o casamento, reaja em ate `60s`",
-                                color=ctx.author.color)
+                mag = await ctx.send(f"> {target.mention}", embed=embed)
 
-                    mag = await ctx.send(f"> {target.mention}", embed=embed)
+                await mag.add_reaction('✅')
 
-                    await mag.add_reaction('✅')
+                def check(reaction, user):
+                    return user == target and str(reaction.emoji) in ['✅']
 
-                    def check(reaction, user):
-                        return user == target and str(reaction.emoji) in ['✅']
+                reaction, user = await self.client.wait_for('reaction_add', check=check, timeout=180.0)
 
-                    reaction, user = await self.client.wait_for('reaction_add', check=check, timeout=180.0)
+                if (reaction.emoji == '✅') and (reaction.message.id == mag.id):
 
-                    if (reaction.emoji == '✅') and (reaction.message.id == mag.id):
+                    await mag.delete()
 
-                        await mag.delete()
+                    embed=Embed(title=f"`{ctx.author.name}` e `{target.name}`, agora são casados",
+                            description="Felicidades ao casal e tudo de bom.",
+                            color=ctx.author.color)
 
-                        embed=Embed(title=f"`{ctx.author.name}` e `{target.name}`, agora são casados",
-                                description="Felicidades ao casal e tudo de bom.",
-                                color=ctx.author.color)
-
-                        await ctx.send(f"> {ctx.author.mention}", embed=embed)
-
-                        self.client.db.userglobal.update_one({"user_id":ctx.author.id},
-                                                            {"$set":{"status": target.name, "casal": target.id}})
-                                                            
-                        self.client.db.userglobal.update_one({"user_id":target.id},
-                                                            {"$set":{"status": ctx.author.name, "casal": ctx.author.id}})
-
-                else:
-
-                    embed=Embed(title=f"`Ja esta casado(a)`{target.name}`",
-                                color=ctx.author.color)
                     await ctx.send(f"> {ctx.author.mention}", embed=embed)
+
+                    self.client.db.userglobal.update_one({"user_id":ctx.author.id},
+                                                        {"$set":{"status": target.name, "casal": target.id}})
+                                                        
+                    self.client.db.userglobal.update_one({"user_id":target.id},
+                                                        {"$set":{"status": ctx.author.name, "casal": ctx.author.id}})
 
     @guild_only()
     @command()
-    async def divorciar(self, ctx, target: Optional[Member]):
+    async def divorciar(self, ctx, target: Member = None):
 
         ref = db.reference("bot-seven")
         canal = ref.child(f"config/{ctx.guild.id}/{ctx.channel.id}/jogos")
@@ -607,56 +600,54 @@ class jogos(Cog):
 
                 await ctx.send(f"> {ctx.author.mention}", embed=embed)
 
-            if target.id == ctx.author.id:
+            elif target.id == ctx.author.id:
 
                 embed=Embed(title="Você não casou com você mesmo",
                             color=ctx.author.color,)
 
                 await ctx.send(f"> {ctx.author.mention}", embed=embed)
 
-            if user2["casal"] != ctx.author.id:
+            elif user2["casal"] != ctx.author.id:
 
                 embed=Embed(title=f"Você não esta casado com a(o) {target}",
                             color=ctx.author.color,)
 
                 await ctx.send(f"> {ctx.author.mention}", embed=embed)
 
-            if target == self.client.user:
+            elif target == self.client.user:
 
                 embed=Embed(title="tu não casou comigo.",
                             color=ctx.author.color,)
 
                 await ctx.send(f"> {ctx.author.mention}", embed=embed)
 
-            else:
+            elif (user["status"] != "solteiro") and (user["casal"] == "null"):
 
-                if user["status"] != "solteiro":
+                embed=Embed(title=f"{ctx.author.name} esta pedindo divócio a(o) {target.name}",
+                            description="Para aceitar o divórcio, reaja em ate `60s`",
+                            color=ctx.author.color)
 
-                    embed=Embed(title=f"{ctx.author.name} esta pedindo divócio a(o) {target.name}",
-                                description="Para aceitar o divórcio, reaja em ate `60s`",
-                                color=ctx.author.color)
+                mag = await ctx.send(f"> {target.mention}", embed=embed)
 
-                    mag = await ctx.send(f"> {target.mention}", embed=embed)
+                await mag.add_reaction('✅')
 
-                    await mag.add_reaction('✅')
+                def check(reaction, user):
+                    return user == target and str(reaction.emoji) in ['✅']
 
-                    def check(reaction, user):
-                        return user == target and str(reaction.emoji) in ['✅']
+                reaction, user = await self.client.wait_for('reaction_add', check=check, timeout=180.0)
 
-                    reaction, user = await self.client.wait_for('reaction_add', check=check, timeout=180.0)
+                if (reaction.emoji == '✅') and (reaction.message.id == mag.id):
 
-                    if (reaction.emoji == '✅') and (reaction.message.id == mag.id):
+                    await mag.delete()
 
-                        await mag.delete()
+                    embed=Embed(title=f"{ctx.author.name} e {target.name}, se separaram",
+                            description="Que triste que esse casal acabou.",
+                            color=ctx.author.color)
 
-                        embed=Embed(title=f"{ctx.author.name} e {target.name}, se separaram",
-                                description="Que triste que esse casal acabou.",
-                                color=ctx.author.color)
+                    await ctx.send(f"> {ctx.author.mention}", embed=embed)
 
-                        await ctx.send(f"> {ctx.author.mention}", embed=embed)
-
-                        self.client.db.userglobal.update_one({"user_id":ctx.author.id}, {"$set":{"status": "solteiro", "casal": "null"}})
-                        self.client.db.userglobal.update_one({"user_id":target.id}, {"$set":{"status": "solteiro", "casal": "null"}})
+                    self.client.db.userglobal.update_one({"user_id":ctx.author.id}, {"$set":{"status": "solteiro", "casal": "null"}})
+                    self.client.db.userglobal.update_one({"user_id":target.id}, {"$set":{"status": "solteiro", "casal": "null"}})
 
 def setup(client):
 

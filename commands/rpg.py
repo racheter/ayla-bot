@@ -1275,7 +1275,7 @@ class rpg(Cog):
 
                 self.client.db.userguild.update_one({"server_id":ctx.guild.id} and {"user_id":ctx.author.id}, {"$inc":{"ponto": + gerado}})
 
-            if planeta["planeta"] == "Tita":
+            if planeta["planeta"] == "Titã":
 
                 gerado = randint(100, 125)
 
@@ -1790,7 +1790,7 @@ class rpg(Cog):
 
                     elif puxarplaneta[0] == "Falhou":
 
-                        embed=Embed(title="Muitos erros na viaje",
+                        embed=Embed(title="Muitos erros na viajem.",
                                 description=f"retornou a terra",
                                 color=ctx.author.color,
                                 )
@@ -1841,7 +1841,7 @@ class rpg(Cog):
 
                 elif puxarplaneta[0] == "Falhou":
 
-                    embed=Embed(title="Muitos erros na viaje",
+                    embed=Embed(title="Muitos erros na viajem.",
                             description=f"retornou a terra",
                             color=ctx.author.color,
                             )
@@ -1966,7 +1966,7 @@ class rpg(Cog):
 
                         elif puxarplaneta[0] == "Falhou":
 
-                            embed=Embed(title="Muitos erros na viaje",
+                            embed=Embed(title="Muitos erros na viajem.",
                                     description=f"retornou a terra",
                                     color=ctx.author.color,
                                     )
@@ -2017,7 +2017,7 @@ class rpg(Cog):
 
                     elif puxarplaneta[0] == "Falhou":
 
-                        embed=Embed(title="Muitos erros na viaje",
+                        embed=Embed(title="Muitos erros na viajem.",
                                 description=f"retornou a terra",
                                 color=ctx.author.color,
                                 )

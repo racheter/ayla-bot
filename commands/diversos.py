@@ -280,7 +280,7 @@ class comando(Cog):
 
                 fields=[("`userinfo` [none ou membro]", "Para ver informações do usuario", False),
                         ("`serverinfo` [sem parametro]", "Para ver informações do servidor", False),
-                        ("`botinfo` [sem parametros]", "Mostra infos do the seven(eu)", False),
+                        ("`botinfo` [sem parametros]", "Mostra infos da Ayla(euzinha)", False),
                         ("`avatar` [membro]", "Mostra a foto de perfil do usuario", False),
                         ("`ping` [sem parametros]", "mostra a latencia do bot", False),
                         ]

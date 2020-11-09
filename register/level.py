@@ -175,6 +175,10 @@ class level(Cog):
                 user = ctx.author
                 await user.add_roles(role)
 
+                role2 = utils.get(ctx.guild.roles, id=762152642641133580)
+                user2 = ctx.author
+                await user2.remove_roles(role2)
+
             self.client.db.userguild.update_one(
                 {"server_id":ctx.guild.id} and {"user_id":ctx.author.id},
                 {"$set":{"limite": 16500}, "$inc":{"level": + 1}})

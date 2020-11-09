@@ -412,6 +412,8 @@ class admins(Cog):
 
                 if (reaction.emoji == '✅') and (reaction.message.id == mag.id):
 
+                    await mag.delete()
+
                     embed=Embed(title="Usuario banido", color=0xDD2222, timestamp=datetime.utcnow())
                     embed.set_thumbnail(url=f"{target.avatar_url}")
 

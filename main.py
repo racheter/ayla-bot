@@ -36,6 +36,7 @@ modulos = [
     "register.xp",
     "register.level",
     "register.registro",
+    "events.autorole",
     "events.erros",
     "events.online"
     ]

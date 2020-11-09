@@ -40,6 +40,16 @@ class reg(Cog):
                     "baniu": 0
                     })
 
+        ref = db.reference("bot-seven")
+        avisos = ref.child(f"avisos/{member.guild.id}/{member.id}")
+        ca_pre = avisos.get()
+
+        if ca_pre is None:
+
+            sera = ref.child("avisos")
+
+            sera.update({f'{member.guild.id}/{member.id}': {"aviso": 0 }})
+
     @Cog.listener()
     async def on_message(self, message):
 
@@ -82,7 +92,7 @@ class reg(Cog):
 
             sera = ref.child("avisos")
 
-            sera.update({f'{message.guild.id}/{message.guild.id}': {"aviso": 0 }})
+            sera.update({f'{message.guild.id}/{message.author.id}': {"aviso": 0 }})
 
 def setup(client):
 
