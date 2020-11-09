@@ -1,4 +1,5 @@
 from discord.ext.commands import Cog
+from discord import utils
 
 
 class autorole(Cog):
@@ -16,7 +17,9 @@ class autorole(Cog):
             role = utils.get(ctx.guild.roles, id=719585182637883504)
             user = ctx.author
 
-            await user.add_roles(role)
+            if role is None:
+
+                await user.add_roles(role)
 
     @Cog.listener()
     async def on_member_join(self, member):
@@ -24,7 +27,7 @@ class autorole(Cog):
         if member.guild.id == 726608160437305376:
 
             role = utils.get(member.guild.roles, id=719585182637883504)
-            user = member.author
+            user = member
 
             await user.add_roles(role)
 
