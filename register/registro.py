@@ -62,6 +62,7 @@ class reg(Cog):
                     "planeta": "terra",
                     "classe": "sem classe"
                     })
+            print("registrado")
 
         if total is None:
 
