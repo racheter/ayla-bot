@@ -322,7 +322,7 @@ class jogos(Cog):
 
                     mag = await ctx.send(ctx.author.mention, embed=embed)
     @guild_only()
-    @command(aliases=["slap"])
+    @command(aliases=["slap", "bater"])
     async def tapa(self, ctx, cmd: Optional[Member]):
 
         ref = db.reference("bot-seven")
