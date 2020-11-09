@@ -15,11 +15,12 @@ class autorole(Cog):
         if ctx.guild.id == 726608160437305376:
 
             role = utils.get(ctx.author.roles, id=719585182637883504)
+            role2 = utils.get(ctx.guild.roles, id=719585182637883504)
             user = ctx.author
 
             if role is None:
 
-                await user.add_roles(role)
+                await user.add_roles(role2)
 
     @Cog.listener()
     async def on_member_join(self, member):
