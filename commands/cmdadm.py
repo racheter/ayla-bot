@@ -440,11 +440,7 @@ class admins(Cog):
 
         if ((cmd == "xp") or (cmd == "rpg") or (cmd == "diversos") or (cmd == "jogos")) and (opc == "ativar"):
 
-            print("ok")
-
             if (final == "true"):
-
-                print("ok2")
 
                 embed=Embed(title=f"`{cmd}` ja esta ativo aqui",
                             color=ctx.author.color,
@@ -453,8 +449,6 @@ class admins(Cog):
                 await ctx.send(f"> {ctx.author.mention}", embed=embed)
 
             elif (final == "false") or (final == None):
-
-                print("ok3")
 
                 ativar = ref.child(f"config/{ctx.guild.id}/{ctx.channel.id}")
                 ativar.update({f"{cmd}": "true"})

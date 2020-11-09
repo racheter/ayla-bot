@@ -20,7 +20,7 @@ class xp(Cog):
         canal = ref.child(f"config/{ctx.guild.id}/{ctx.channel.id}/xp")
         final = canal.get()
 
-        if final == "ativar":
+        if final == "true":
             self.client.db.userguild.update_one({"server_id":ctx.guild.id} and {"user_id":ctx.author.id}, {"$inc":{"xp": + 4}})
 
         else: return
