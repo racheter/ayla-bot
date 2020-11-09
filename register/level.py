@@ -30,7 +30,7 @@ class level(Cog):
                         description="Ganhou `50` sonos`",color=ctx.author.color,)
                 await ctx.author.send(embed=embed)
 
-                self.client.db.userglobal.update_one({"user_id":ctx.audthor.id},{"$inc":{"sonos": + 50}})
+                self.client.db.userglobal.update_one({"user_id":ctx.author.id},{"$inc":{"sonos": + 50}})
 
                 role = utils.get(ctx.guild.roles, id=762152642641133580)
                 user = ctx.author
