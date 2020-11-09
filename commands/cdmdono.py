@@ -83,17 +83,11 @@ class dono(Cog):
     @is_owner()
     @command()
     async def sequestrar(self, ctx):
-
-        links = [
-                "https://tenor.com/view/kidnap-ready-to-go-ready-packing-revenge-gif-14345059"
-                ]
-        
-        beijo1 = choice(links)
         
         embed=Embed(title=f"Miss foi sequestrada com sucesso",
                     color=ctx.author.color,)
 
-        embed.set_image(url=beijo1)
+        embed.set_image(url="https://tenor.com/view/kidnap-ready-to-go-ready-packing-revenge-gif-14345059")
         
         await ctx.send("> <@702232216058462218>", embed=embed)
 
