@@ -24,7 +24,7 @@ class level(Cog):
         if (analise['xp'] >= 1000 and analise['xp'] <= 2199) and (analise['level'] == 0):
             #level 1 local
 
-            if ctx.guild.id == 773751985932992565:
+            if ctx.guild.id == 726608160437305376:
 
                 embed=Embed(title=f"Subiu para o level 1 em `{ctx.guild.name}`",
                         description="Ganhou `50` sonos`",color=ctx.author.color,)
@@ -32,7 +32,7 @@ class level(Cog):
 
                 self.client.db.userglobal.update_one({"user_id":ctx.audthor.id},{"$inc":{"sonos": + 50}})
 
-                role = utils.get(ctx.guild.roles, id=775130034641305641)
+                role = utils.get(ctx.guild.roles, id=762152642641133580)
                 user = ctx.author
                 await user.add_roles(role)
 
@@ -145,6 +145,34 @@ class level(Cog):
             self.client.db.userguild.update_one(
                 {"server_id":ctx.guild.id} and {"user_id":ctx.author.id},
                 {"$set":{"limite": 30600}, "$inc":{"level": + 1}})
+
+        if (analise['xp'] >= 30600 and analise['xp'] <= 33299) and (analise['level'] == 0):
+            #level 17 local
+
+            self.client.db.userguild.update_one(
+                {"server_id":ctx.guild.id} and {"user_id":ctx.author.id},
+                {"$set":{"limite": 33300}, "$inc":{"level": + 1}})
+
+        if (analise['xp'] >= 33300 and analise['xp'] <= 36099) and (analise['level'] == 0):
+            #level 18 local
+
+            self.client.db.userguild.update_one(
+                {"server_id":ctx.guild.id} and {"user_id":ctx.author.id},
+                {"$set":{"limite": 36100}, "$inc":{"level": + 1}})
+
+        if (analise['xp'] >= 36100 and analise['xp'] <= 38999) and (analise['level'] == 0):
+            #level 19 local
+
+            self.client.db.userguild.update_one(
+                {"server_id":ctx.guild.id} and {"user_id":ctx.author.id},
+                {"$set":{"limite": 39000}, "$inc":{"level": + 1}})
+
+        if (analise['xp'] >= 39000 and analise['xp'] <= 41999) and (analise['level'] == 0):
+            #level 20 local
+
+            self.client.db.userguild.update_one(
+                {"server_id":ctx.guild.id} and {"user_id":ctx.author.id},
+                {"$set":{"limite": 42000}, "$inc":{"level": + 1}})
 
 def setup(client):
 

@@ -76,10 +76,10 @@ class admins(Cog):
 
             if role1 is None:
                 await ctx.guild.create_role(name="1ª Aviso | Ayla")
-                print("ok3")
+
             if role2 is None:
                 await ctx.guild.create_role(name="2ª Aviso | Ayla")
-                print("ok4")
+
 
             if avisar == None:
 
@@ -87,13 +87,13 @@ class admins(Cog):
 
                 sera.update({f'{ctx.guild.id}/{target.id}': {"aviso": 0 }})
 
+                await sleep(2)
+
             if avisar >= 0:
 
                 embed=Embed(title=f"{ctx.author.name} esta prestes dar um aviso o(a) {target.name}",
                             description="tem certeza que deseja avisar ?\nReaja ao ✅ para avisar\nDuração de pergunta: `40s`",
                             color=ctx.author.color)
-
-                embed.set_author(name=f"{ctx.author.name}", icon_url=f"{ctx.author.avatar_url}")
 
                 embed.add_field(name="Motivo:", value= reason)
 
@@ -213,6 +213,8 @@ class admins(Cog):
                 sera = ref.child("avisos")
 
                 sera.update({f'{ctx.guild.id}/{target.id}': {"aviso": 0 }})
+
+                await sleep(2)
 
             if avisar == 0:
 
