@@ -85,7 +85,7 @@ class dono(Cog):
     async def sequestrar(self, ctx):
 
         links = [
-                "https://cdn.discordapp.com/attachments/753391453052338226/756627543108354068/anime-kiss-1.gif"
+                "https://tenor.com/view/kidnap-ready-to-go-ready-packing-revenge-gif-14345059"
                 ]
         
         beijo1 = choice(links)
