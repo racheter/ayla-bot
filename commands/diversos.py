@@ -342,6 +342,7 @@ class comando(Cog):
 
                 fields=[("`ban` [membro] e [motivo]", "Para banir um membro", False),
                         ("`kick` [membro] e [motivo]", "Para expulsar alguem", False),
+                        ("`aviso` [membro] e [motivo]", "Para avisar alguem terceiro aviso igual ban", False),
                         ("`say` [embed ou embedfrase] ou/e [msg]", "Para usar a voz do bot", False),
                         ("`apagar` [membro] ou [valor]", "Apaga de 2 até 1000 msg da sala", False),
                         ]
@@ -357,8 +358,7 @@ class comando(Cog):
                         color=ctx.author.color,
                     )
 
-                fields=[("`ativar` [comando ou xp]", "ativa um comando na sala q o executar", False),
-                        ("`desativar` [comando ou xp]", "desativa um comando na sala q o executar", False),
+                fields=[("`config` [modulo] [ativar ou desativar]", "desativa ou ativa um modulo", False),
                         ("`prefixo` [prefixo]", "muda o prefixo do servidor", False),
                         ]
 
