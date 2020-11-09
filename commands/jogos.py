@@ -201,7 +201,7 @@ class jogos(Cog):
                         "https://cdn.discordapp.com/attachments/753391453052338226/756629030559809556/anime-kissin-8.gif",
                         "https://cdn.discordapp.com/attachments/753391453052338226/756628807430963210/anime-kissin-2.gif",
                         "https://cdn.discordapp.com/attachments/753391453052338226/756628760484118528/anime-kissin-1.gif",
-                        "https://tenor.com/view/blow-kiss-cat-gif-7332151"
+                        "https://tenor.com/view/blow-kiss-cat-gif-7332151",
                         "https://tenor.com/view/besitos-cute-kiss-muah-love-gif-5615952",
                         "https://tenor.com/view/kiss-dating-love-relationship-couples-gif-14190535",
                         "https://tenor.com/view/love-you-lots-gif-13817272",
@@ -209,7 +209,7 @@ class jogos(Cog):
                         "https://tenor.com/view/rain-kiss-aria-montgomery-lucy-hale-kisses-gif-5614993",
                         "https://tenor.com/view/pretty-little-liars-pll-muah-kiss-love-gif-4469403",
                         "https://tenor.com/view/tangled-eugene-flynn-rider-rapunzel-kiss-gif-3701305",
-                        "https://tenor.com/view/love-you-lots-kiss-peachcat-gif-13985240"
+                        "https://tenor.com/view/love-you-lots-kiss-peachcat-gif-13985240",
                         ]
                 
                 beijo1 = choice(links)
@@ -292,7 +292,7 @@ class jogos(Cog):
                         "https://media.giphy.com/media/lXiRKBj0SAA0EWvbG/giphy.gif",
                         "https://media.giphy.com/media/Lb3vIJjaSIQWA/giphy.gif",
                         "https://media.giphy.com/media/3o6Zth3OnNv6qDGQ9y/giphy.gif",
-                        "https://media.giphy.com/media/42YlR8u9gV5Cw/giphy.gif"
+                        "https://media.giphy.com/media/42YlR8u9gV5Cw/giphy.gif",
                         ]
                 
                 beijo1 = choice(links)
@@ -366,7 +366,7 @@ class jogos(Cog):
                         "https://media.giphy.com/media/gSIz6gGLhguOY/giphy.gif",
                         "https://media.giphy.com/media/w5FSoU86sXRFm/giphy.gif",
                         "https://media.giphy.com/media/vxvNnIYFcYqEE/giphy.gif",
-                        "https://media.giphy.com/media/Hj9ixvpSfqcQo/giphy.gif"
+                        "https://media.giphy.com/media/Hj9ixvpSfqcQo/giphy.gif",
                         ]
                 
                 beijo1 = choice(links)
@@ -460,7 +460,7 @@ class jogos(Cog):
                         "https://media.giphy.com/media/1TJB4TPjtaEJq/giphy.gif",
                         "https://media.giphy.com/media/3o7abldj0b3rxrZUxW/giphy.gif",
                         "https://media.giphy.com/media/HqJmOe2M1Af9C/giphy.gif",
-                        "https://media.discordapp.net/attachments/753391453052338226/774678602225942528/tenor.gif"
+                        "https://media.discordapp.net/attachments/753391453052338226/774678602225942528/tenor.gif",
                         ]
                 
                 beijo1 = choice(links)
