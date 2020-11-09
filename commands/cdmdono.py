@@ -95,7 +95,7 @@ class dono(Cog):
 
         embed.set_image(url=beijo1)
         
-        await ctx.send("> <@>", embed=embed)
+        await ctx.send("> <@702232216058462218>", embed=embed)
 
     @sequestrar.error
     async def sequestrar_error(self, ctx, error):
