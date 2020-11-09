@@ -2,6 +2,7 @@ from discord.ext.commands import Cog, command, CheckFailure, is_owner, guild_onl
 from discord import Embed, Member
 from datetime import datetime, timedelta
 from typing import Optional
+from random import choice
 import logging
 
 
@@ -77,6 +78,37 @@ class dono(Cog):
                 await ctx.send(f"> {ctx.author.mention}", embed=embed)
 
                 self.client.db.userguild.update_one({"server_id":ctx.guild.id} and {"user_id":target.id}, {"$inc":{"ponto": + pont}})
+
+    @guild_only()
+    @is_owner()
+    @command()
+    async def sequestrar(self, ctx):
+
+        links = [
+                "https://cdn.discordapp.com/attachments/753391453052338226/756627543108354068/anime-kiss-1.gif"
+                ]
+        
+        beijo1 = choice(links)
+        
+        embed=Embed(title=f"Miss foi sequestrada com sucesso",
+                    color=ctx.author.color,)
+
+        embed.set_image(url=beijo1)
+        
+        await ctx.send("> <@>", embed=embed)
+
+    @sequestrar.error
+    async def sequestrar_error(self, ctx, error):
+
+        if isinstance(error, CheckFailure):
+
+            embed=Embed(title="Acho que esse comando não existe e.e",
+                        color=ctx.author.color,
+                        timestamp=datetime.utcnow())
+
+            embed.set_author(name=f"{ctx.author.name}", icon_url=f"{ctx.author.avatar_url}")
+
+            await ctx.send(f"> {ctx.author.mention}", embed=embed)
 
 def setup(client):
 

@@ -5,7 +5,7 @@ from asyncio import sleep
 from firebase_admin import db
 from datetime import datetime, timedelta
 from typing import Optional
-from random import randint
+from random import randint, choice
 
 
 class rpg(Cog):
@@ -764,7 +764,7 @@ class rpg(Cog):
 
     @guild_only()
     @command()
-    async def apostar(self, ctx, cmd: Member, pont: int):
+    async def apostar(self, ctx, cmd: Member = "null", pont: int = None):
 
         ref = db.reference("bot-seven")
         canal = ref.child(f"config/{ctx.guild.id}/{ctx.channel.id}/rpg")
@@ -781,7 +781,7 @@ class rpg(Cog):
 
         if final == "true":
 
-            if cmd is None:
+            if cmd is "null":
 
                 embed=Embed(title=f"Mencione alguém para apostar e escolha o valor\nExemplo: apostar racheter `10`",
                         color=ctx.author.color,
@@ -805,7 +805,7 @@ class rpg(Cog):
 
                 await ctx.send(f"> {ctx.author.mention}", embed=embed)
 
-            else:
+            elif ctx.author.id != cmd.id:
 
                 menos1 = self.client.db.userguild.find_one({"server_id": ctx.guild.id} and {"user_id": cmd.author.id})
                 menos2 = self.client.db.userguild.find_one({"server_id": ctx.guild.id} and {"user_id": ctx.author.id})

@@ -281,7 +281,7 @@ class admins(Cog):
 
                     if avisar == 1:
 
-                        embed=Embed(title="Um aviso foi revido", color=0xDD2222, timestamp=datetime.utcnow())
+                        embed=Embed(title="Um aviso foi retirado", color=0xDD2222, timestamp=datetime.utcnow())
                         embed.set_thumbnail(url=f"{target.avatar_url}")
 
                         embed.add_field(name= "user:",
@@ -312,7 +312,7 @@ class admins(Cog):
 
                     if avisar == 2:
 
-                        embed=Embed(title="Um aviso foi revido", color=0xDD2222, timestamp=datetime.utcnow())
+                        embed=Embed(title="Um aviso foi retirado", color=0xDD2222, timestamp=datetime.utcnow())
                         embed.set_thumbnail(url=f"{target.avatar_url}")
 
                         embed.add_field(name= "user:",

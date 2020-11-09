@@ -4,7 +4,7 @@ from discord import Game, Streaming
 from asyncio import sleep
 from itertools import cycle
 
-status = cycle(['Olaaa, use help/ajuda.', 'prefixo padrão: -', 'V: 0.0.9.5'])
+status = cycle(['Olaaa, use help/ajuda.', 'racheter.net', 'prefixo padrão: -', 'V: 0.0.9.5'])
 
 class ready(Cog):
 
