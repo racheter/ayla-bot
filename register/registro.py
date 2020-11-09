@@ -42,19 +42,17 @@ class reg(Cog):
 
     @Cog.listener()
     async def on_message(self, message):
-
-        print("hmm")
-
+        
         if message.author.bot: return
 
         if not message.guild: return
 
-        servidor = self.client.db.userguild.find({"server_id": message.guild.id} and {"user_id": message.author.id})
-        total = self.client.db.userglobal.find({"user_id": message.author.id})
+        servidor = self.client.db.userguild.find_one({"server_id": message.guild.id} and {"user_id": message.author.id})
+        total = self.client.db.userglobal.find_one({"user_id": message.author.id})
         
         if servidor is None:
 
-            self.client.db.userguild.insert({
+            self.client.db.userguild.insert_one({
                     "server_id": message.guild.id,
                     "user_id": message.author.id,
                     "ponto": 0,
@@ -68,11 +66,12 @@ class reg(Cog):
 
         if total is None:
 
-            self.client.db.userglobal.insert({
+            self.client.db.userglobal.insert_one({
                     "user_id": message.author.id,
                     "status": "solteiro",
                     "casal": "null",
                     "sonos": 0,
+                    "xp": 0,
                     "baniu": 0
                     })
 
