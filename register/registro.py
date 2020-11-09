@@ -14,12 +14,12 @@ class reg(Cog):
 
         if member.bot: return
 
-        servidor = self.client.db.userguild.find({"server_id": member.guild.id} and {"user_id": member.id})
-        total = self.client.db.userglobal.find({"user_id": member.id})
+        servidor = self.client.db.userguild.find_one({"server_id": member.guild.id} and {"user_id": member.id})
+        total = self.client.db.userglobal.find_one({"user_id": member.id})
         
         if servidor is None:
 
-            self.client.db.userguild.insert({
+            self.client.db.userguild.insert_one({
                     "server_id": member.guild.id,
                     "user_id": member.id,
                     "ponto": 0,
@@ -32,7 +32,7 @@ class reg(Cog):
 
         if total is None:
 
-            self.client.db.userglobal.insert({
+            self.client.db.userglobal.insert_one({
                     "user_id": member.id,
                     "status": "solteiro",
                     "casal": "null",
@@ -42,7 +42,7 @@ class reg(Cog):
 
     @Cog.listener()
     async def on_message(self, message):
-        
+
         if message.author.bot: return
 
         if not message.guild: return
@@ -62,7 +62,6 @@ class reg(Cog):
                     "planeta": "terra",
                     "classe": "sem classe"
                     })
-            print("registrado")
 
         if total is None:
 
@@ -74,6 +73,16 @@ class reg(Cog):
                     "xp": 0,
                     "baniu": 0
                     })
+
+        ref = db.reference("bot-seven")
+        avisos = ref.child(f"avisos/{message.guild.id}/{message.author.id}")
+        ca_pre = avisos.get()
+
+        if ca_pre is None:
+
+            sera = ref.child("avisos")
+
+            sera.update({f'{message.guild.id}/{message.guild.id}': {"aviso": 0 }})
 
 def setup(client):
 

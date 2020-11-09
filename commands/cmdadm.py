@@ -76,18 +76,20 @@ class admins(Cog):
 
             if role1 is None:
                 await ctx.guild.create_role(name="1ª Aviso | Ayla")
+                pass
 
             if role2 is None:
                 await ctx.guild.create_role(name="2ª Aviso | Ayla")
+                pass
 
 
             if avisar == None:
 
                 sera = ref.child("avisos")
-
                 sera.update({f'{ctx.guild.id}/{target.id}': {"aviso": 0 }})
 
-                await sleep(2)
+                await sleep(5)
+                pass
 
             if avisar >= 0:
 
@@ -128,7 +130,7 @@ class admins(Cog):
                         embed.add_field(name= "Quem avisou:",
                                         value= f"Nome: {ctx.author.name}\nID: {ctx.author.id}", inline=False)
 
-                        await ctx.send(embed=embed)
+                        men = await ctx.send(embed=embed)
 
                         infoa2.update({"aviso": num })
 
@@ -137,6 +139,14 @@ class admins(Cog):
                         await sleep(1)
                         
                         await user.add_roles(role)
+
+                        if ctx.guild.id == 719555624374894692:
+
+                            canal1 = self.client.get_channel(id=719564144516268092)
+                            await canal1.send(embed=embed)
+
+                            await sleep(5)
+                            await men.delete()
 
                     if avisar == 1:
 
@@ -151,7 +161,7 @@ class admins(Cog):
                         embed.add_field(name= "Quem avisou:",
                                         value= f"Nome: {ctx.author.name}\nID: {ctx.author.id}", inline=False)
 
-                        await ctx.send(embed=embed)
+                        men = await ctx.send(embed=embed)
 
                         infoa2.update({"aviso": num })
 
@@ -160,6 +170,14 @@ class admins(Cog):
                         await sleep(1)
 
                         await user.add_roles(role)
+
+                        if ctx.guild.id == 719555624374894692:
+
+                            canal1 = self.client.get_channel(id=719564144516268092)
+                            await canal1.send(embed=embed)
+
+                            await sleep(5)
+                            await men.delete()
 
                     if avisar >= 2:
 
@@ -174,11 +192,19 @@ class admins(Cog):
                         embed.add_field(name= "Quem avisou:",
                                         value= f"Nome: {ctx.author.name}\nID: {ctx.author.id}", inline=False)
 
-                        await ctx.send(embed=embed)
+                        men = await ctx.send(embed=embed)
 
                         infoa2.update({"aviso": num2 })
 
                         await target.ban(reason=reason)
+
+                        if ctx.guild.id == 719555624374894692:
+
+                            canal1 = self.client.get_channel(id=719564144516268092)
+                            await canal1.send(embed=embed)
+
+                            await sleep(5)
+                            await men.delete()
 
     @guild_only()
     @command(aliases=['removeaviso', 'radv', 'desavisa', 'desavisar'])
@@ -205,8 +231,10 @@ class admins(Cog):
 
             if role1 is None:
                 await ctx.guild.create_role(name="1ª Aviso | Ayla")
+                pass
             if role2 is None:
                 await ctx.guild.create_role(name="2ª Aviso | Ayla")
+                pass
 
             if avisar == None:
 
@@ -214,7 +242,8 @@ class admins(Cog):
 
                 sera.update({f'{ctx.guild.id}/{target.id}': {"aviso": 0 }})
 
-                await sleep(2)
+                await sleep(5)
+                pass
 
             if avisar == 0:
 
@@ -223,7 +252,7 @@ class admins(Cog):
 
                 await ctx.send(embed=embed)
 
-            if (avisar == 1) or (avisar == 2):
+            else:
 
                 embed=Embed(title=f"{ctx.author.name} esta prestes a retirar um aviso do(a) {target.name}",
                             description="tem certeza que deseja retirar o aviso ?\nReaja ao ✅ para desavisar\nDuração de pergunta: `40s`",
@@ -263,7 +292,7 @@ class admins(Cog):
                         embed.add_field(name= "Quem retirou:",
                                         value= f"Nome: {ctx.author.name}\nID: {ctx.author.id}", inline=False)
 
-                        await ctx.send(embed=embed)
+                        men = await ctx.send(embed=embed)
 
                         infoa2.update({"aviso": num2 })
 
@@ -272,6 +301,14 @@ class admins(Cog):
                         await sleep(1)
                         
                         await user.remove_roles(role)
+
+                        if ctx.guild.id == 719555624374894692:
+
+                            canal1 = self.client.get_channel(id=719564144516268092)
+                            await canal1.send(embed=embed)
+
+                            await sleep(5)
+                            await men.delete()
 
                     if avisar == 2:
 
@@ -286,7 +323,7 @@ class admins(Cog):
                         embed.add_field(name= "Quem retirou:",
                                         value= f"Nome: {ctx.author.name}\nID: {ctx.author.id}", inline=False)
 
-                        await ctx.send(embed=embed)
+                        men = await ctx.send(embed=embed)
 
                         infoa2.update({"aviso": num2 })
 
@@ -295,6 +332,14 @@ class admins(Cog):
                         await sleep(1)
 
                         await user.remove_roles(role)
+
+                        if ctx.guild.id == 719555624374894692:
+
+                            canal1 = self.client.get_channel(id=719564144516268092)
+                            await canal1.send(embed=embed)
+
+                            await sleep(5)
+                            await men.delete()
 
 
     @guild_only()
@@ -322,7 +367,11 @@ class admins(Cog):
             embed=Embed(title=f"{len(apagadas) - 1} Mensagens foi apagada.", color=ctx.author.color)
             embed.set_author(name=f"{ctx.author.name}", icon_url=f"{ctx.author.avatar_url}")
 
-            await ctx.send(embed=embed)
+            mag = await ctx.send(embed=embed)
+
+            await sleep(5)
+
+            await mag.delete()
 
         else:
 
@@ -374,8 +423,16 @@ class admins(Cog):
                     embed.add_field(name= "Quem baniu:",
                                     value= f"Nome: {ctx.author.name}\nID: {ctx.author.id}", inline=False)
 
-                    await ctx.send(embed=embed)
+                    men = await ctx.send(embed=embed)
                     await target.ban(reason=reason)
+
+                    if ctx.guild.id == 719555624374894692:
+
+                        canal1 = self.client.get_channel(id=719564144516268092)
+                        await canal1.send(embed=embed)
+
+                        await sleep(5)
+                        await men.delete()
 
     @guild_only()
     @command(aliases=['expulsar', 'k'])
@@ -423,8 +480,16 @@ class admins(Cog):
                     embed.add_field(name= "Quem expulsou:",
                                     value= f"Nome: {ctx.author.name}\nID: {ctx.author.id}", inline=False)
 
-                    await ctx.send(embed=embed)
+                    men = await ctx.send(embed=embed)
                     await target.kick(reason=reason)
+
+                    if ctx.guild.id == 719555624374894692:
+
+                        canal1 = self.client.get_channel(id=719564144516268092)
+                        await canal1.send(embed=embed)
+
+                        await sleep(5)
+                        await men.delete()
 
     @guild_only()
     @command(aliases=['configurar'])
