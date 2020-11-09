@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "bot-seven-racheter",
+  "private_key_id": "b09ff4324948c8ef57dea05058b3a59f43650c32",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCvnfb0JUj+X1xt\nMqPjT9y422/1Bor6n4XX8NYeT/341/x8lvVIBQlb5UnFl6Lowdl8K9KTNlZ4M5MD\nO+HWy1irVS3tXxg42KVH7Cp7IsOmzUYelv3xbwWghzdCgsPbD9zXs98wiwwD+LXn\n3T2zLs8Elq/V9Vvl0MKgM5BTyp+TyH7q9O8J/+E3+bpUsIiewqnjSUV7ZLOva1WY\nrrDt3VKXiud53A41LgStOSJmckUkSFwRR+2tIW8LIby0Gtv5QAo7hoZx5pjPgGZx\ncBx+2CZFbj0Y8Xid6bcPU1ZX+h8uJ2wP+x+SBqGLTlCyWVZjm45QH7oZMMaD610y\naofUcuPzAgMBAAECggEAOelZ8/XNpdB1jq7p235M94qpV0AymWX8gZKyUSmowyQa\nZ01yki7TAMJSOv3/o0i1etyKorADAL1lJ+ZZ2XaSBWHf9MxslOZgTqDi+1sh8MH1\ncwXwtOqbDO45+01a38TR2zG+Emhv7GlaNx0+iPWRH96/GkvAY78dRy3p1K/XQqiI\nUbBbOV3jsFWFLIsOC5zn4gClLhvx+KRSQB8tDFEeztBDtm68T3jG9H9wtdnUnz8p\n6PDA6D0k7MHmNKACfYGONqwothSjtGHTVyowibrQ9tq3pibi3c7KkXX9KTrmS7Cv\nfkFcqMHr9MVmoKwBEaz7lOqaoeAjfV4MyBhzcVqIzQKBgQD1qKldHz7t1tzop/To\nQ9hnDyB+CaAfak76/V5Md6U0k7FGsoaHGB5b5bIOY9mj/04wDNciT2So6Yf4ocGI\nQc3fCnnEM6FNRduQMUPAZRK6vb99E4sIp8XXFtJ7s7xjd3GWnaLc32avAtqkqmUB\nkfiVT5l6hjTLijWbHPBpOercrQKBgQC3An+6GbI+aYzQCg+ua3O5BM19PatxJZqj\n/A62eXmIZQ3FlhrIaN2eYDG8Bh6pgajJB2BZQhPTLicwt/6WugWXAEoGegb9c5ra\nunjluSGKYTTFQiTIf6vEuRTkb2vP50PxTt57wZ7LvI/lLFGVIFBpfpUerefwdmJG\nX4tiTB03HwKBgQCGO+JH20IErorJqrU9kY0XS4HCvTm80NdVeMtlV19zqlyNOBIg\nkcJNDudLy63qWiB8SxfnTKDBV9KPvrvE28hF3zCIUHoMgmamlPTjlZc1aWfQTbSE\nR0Do9jSPmbgQVf1AguSycnRmn1Wf8uf8gqnl1LgV5m3E5sHB/38y0I4QhQKBgD3B\nXx6Ke0ZqUbUGICKIaeV+RGVFwSuON++sJ77VoPgwuYP6UhFcqaQ+66l6GzCx6yXj\nElUsYgo6Iclj3Uo5fZdl5pTm6qLuNswmbpN+dF4AzVDfMBBkXK8mkXFAVA41CQ1N\nwu/Z917iw1/fI6yB2gCvUVyn7IONPz5mEV/bNWSbAoGBAJzZPufwXJPvoiMfmqj0\n2Q99sDQh+gcCOw8zyKMUIYENDuZlwAOfliDfXETko43pkfY3CRRIlx3f3W9QBVwg\nwWAC6Q5D4ANhbVQxqh6RhhEZUkkC7dvyLQa4WQK9krDcMxcv+lrE9ALJcOyU6gB7\ngOshKYpx8FUja6s1gcTwWyCm\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-7ams7@bot-seven-racheter.iam.gserviceaccount.com",
+  "client_id": "107698815721424404041",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-7ams7%40bot-seven-racheter.iam.gserviceaccount.com"
+}
