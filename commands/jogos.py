@@ -533,9 +533,16 @@ class jogos(Cog):
 
                 await ctx.send(f"> {ctx.author.mention}", embed=embed)
 
-            elif user["casal"] == user2["casal"]:
+            elif ctx.author.id == user2["casal"]:
 
                 embed=Embed(title="Os dois ja estão casados",
+                        color=ctx.author.color,)
+
+                await ctx.send(f"> {ctx.author.mention}", embed=embed)
+
+            elif (user2["status"] != "solteiro") and (user2["casal"] != "null"):
+
+                embed=Embed(title=f"`{target.name}` ja esta comprometido(a)",
                         color=ctx.author.color,)
 
                 await ctx.send(f"> {ctx.author.mention}", embed=embed)
