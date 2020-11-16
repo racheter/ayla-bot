@@ -54,7 +54,7 @@ class level(Cog):
             if ctx.guild.id == 719555624374894692:
 
                 embed=Embed(title=f"Subiu para o level 2 em `{ctx.guild.name}`",
-                        description="Ganhou `50` sonos`",color=ctx.author.color,)
+                        description="Ganhou `50` sonos",color=ctx.author.color,)
                 await ctx.author.send(embed=embed)
 
                 self.client.db.userglobal.update_one({"user_id":ctx.author.id},{"$inc":{"sonos": + 50}})
@@ -68,7 +68,7 @@ class level(Cog):
             if ctx.guild.id == 719555624374894692:
 
                 embed=Embed(title=f"Subiu para o level 3 em `{ctx.guild.name}`",
-                        description="Ganhou `50` sonos`",color=ctx.author.color,)
+                        description="Ganhou `50` sonos",color=ctx.author.color,)
                 await ctx.author.send(embed=embed)
 
                 self.client.db.userglobal.update_one({"user_id":ctx.author.id},{"$inc":{"sonos": + 50}})
@@ -82,7 +82,7 @@ class level(Cog):
             if ctx.guild.id == 719555624374894692:
 
                 embed=Embed(title=f"Subiu para o level 4 em `{ctx.guild.name}`",
-                        description="Ganhou `50` sonos`",color=ctx.author.color,)
+                        description="Ganhou `50` sonos",color=ctx.author.color,)
                 await ctx.author.send(embed=embed)
 
                 self.client.db.userglobal.update_one({"user_id":ctx.author.id},{"$inc":{"sonos": + 50}})
@@ -96,7 +96,7 @@ class level(Cog):
             if ctx.guild.id == 719555624374894692:
 
                 embed=Embed(title=f"Subiu para o level 5 em `{ctx.guild.name}`",
-                        description="Ganhou `50` sonos`",color=ctx.author.color,)
+                        description="Ganhou `50` sonos",color=ctx.author.color,)
                 await ctx.author.send(embed=embed)
 
                 self.client.db.userglobal.update_one({"user_id":ctx.author.id},{"$inc":{"sonos": + 50}})
@@ -110,7 +110,7 @@ class level(Cog):
             if ctx.guild.id == 719555624374894692:
 
                 embed=Embed(title=f"Subiu para o level 6 em `{ctx.guild.name}`",
-                        description="Ganhou `50` sonos`",color=ctx.author.color,)
+                        description="Ganhou `50` sonos",color=ctx.author.color,)
                 await ctx.author.send(embed=embed)
 
                 self.client.db.userglobal.update_one({"user_id":ctx.author.id},{"$inc":{"sonos": + 50}})
@@ -124,7 +124,7 @@ class level(Cog):
             if ctx.guild.id == 719555624374894692:
 
                 embed=Embed(title=f"Subiu para o level 7 em `{ctx.guild.name}`",
-                        description="Ganhou `50` sonos`",color=ctx.author.color,)
+                        description="Ganhou `50` sonos",color=ctx.author.color,)
                 await ctx.author.send(embed=embed)
 
                 self.client.db.userglobal.update_one({"user_id":ctx.author.id},{"$inc":{"sonos": + 50}})
@@ -138,7 +138,7 @@ class level(Cog):
             if ctx.guild.id == 719555624374894692:
 
                 embed=Embed(title=f"Subiu para o level 8 em `{ctx.guild.name}`",
-                        description="Ganhou `50` sonos`",color=ctx.author.color,)
+                        description="Ganhou `50` sonos",color=ctx.author.color,)
                 await ctx.author.send(embed=embed)
 
                 self.client.db.userglobal.update_one({"user_id":ctx.author.id},{"$inc":{"sonos": + 50}})
@@ -152,7 +152,7 @@ class level(Cog):
             if ctx.guild.id == 719555624374894692:
 
                 embed=Embed(title=f"Subiu para o level 9 em `{ctx.guild.name}`",
-                        description="Ganhou `50` sonos`",color=ctx.author.color,)
+                        description="Ganhou `50` sonos",color=ctx.author.color,)
                 await ctx.author.send(embed=embed)
 
                 self.client.db.userglobal.update_one({"user_id":ctx.author.id},{"$inc":{"sonos": + 50}})
@@ -163,10 +163,15 @@ class level(Cog):
 
         if ((analise['xp'] >= 14500) and (analise['xp'] <= 16499)) and (analise['level'] == 9):
             #level 10 local
+
+            self.client.db.userguild.update_one(
+                {"server_id":ctx.guild.id} and {"user_id":ctx.author.id},
+                {"$set":{"limite": 16500}, "$inc":{"level": + 1}})
+
             if ctx.guild.id == 719555624374894692:
 
                 embed=Embed(title=f"Subiu para o level 10 em `{ctx.guild.name}`",
-                        description="Ganhou `50` sonos\nGanhou um um cargo exclusivo do level 10`",color=ctx.author.color,)
+                        description="Ganhou `50` sonos\nGanhou um um cargo exclusivo do level 10",color=ctx.author.color,)
                 await ctx.author.send(embed=embed)
 
                 self.client.db.userglobal.update_one({"user_id":ctx.author.id},{"$inc":{"sonos": + 50}})
@@ -175,20 +180,12 @@ class level(Cog):
                 user = ctx.author
                 await user.add_roles(role)
 
-                role2 = utils.get(ctx.guild.roles, id=762152642641133580)
-                user2 = ctx.author
-                await user2.remove_roles(role2)
-
-            self.client.db.userguild.update_one(
-                {"server_id":ctx.guild.id} and {"user_id":ctx.author.id},
-                {"$set":{"limite": 16500}, "$inc":{"level": + 1}})
-
         if ((analise['xp'] >= 16500) and (analise['xp'] <= 18599)) and (analise['level'] == 10):
             #level 11 local:
             if ctx.guild.id == 719555624374894692:
 
                 embed=Embed(title=f"Subiu para o level 11 em `{ctx.guild.name}`",
-                        description="Ganhou `50` sonos`",color=ctx.author.color,)
+                        description="Ganhou `50` sonos",color=ctx.author.color,)
                 await ctx.author.send(embed=embed)
 
                 self.client.db.userglobal.update_one({"user_id":ctx.author.id},{"$inc":{"sonos": + 50}})
@@ -202,7 +199,7 @@ class level(Cog):
             if ctx.guild.id == 719555624374894692:
 
                 embed=Embed(title=f"Subiu para o level 12 em `{ctx.guild.name}`",
-                        description="Ganhou `50` sonos`",color=ctx.author.color,)
+                        description="Ganhou `50` sonos",color=ctx.author.color,)
                 await ctx.author.send(embed=embed)
 
                 self.client.db.userglobal.update_one({"user_id":ctx.author.id},{"$inc":{"sonos": + 50}})
@@ -217,7 +214,7 @@ class level(Cog):
             if ctx.guild.id == 719555624374894692:
 
                 embed=Embed(title=f"Subiu para o level 13 em `{ctx.guild.name}`",
-                        description="Ganhou `50` sonos`",color=ctx.author.color,)
+                        description="Ganhou `50` sonos",color=ctx.author.color,)
                 await ctx.author.send(embed=embed)
 
                 self.client.db.userglobal.update_one({"user_id":ctx.author.id},{"$inc":{"sonos": + 50}})
@@ -231,7 +228,7 @@ class level(Cog):
             if ctx.guild.id == 719555624374894692:
 
                 embed=Embed(title=f"Subiu para o level 14 em `{ctx.guild.name}`",
-                        description="Ganhou `50` sonos`",color=ctx.author.color,)
+                        description="Ganhou `50` sonos",color=ctx.author.color,)
                 await ctx.author.send(embed=embed)
 
                 self.client.db.userglobal.update_one({"user_id":ctx.author.id},{"$inc":{"sonos": + 50}})
@@ -245,7 +242,7 @@ class level(Cog):
             if ctx.guild.id == 719555624374894692:
 
                 embed=Embed(title=f"Subiu para o level 15 em `{ctx.guild.name}`",
-                        description="Ganhou `50` sonos`",color=ctx.author.color,)
+                        description="Ganhou `50` sonos",color=ctx.author.color,)
                 await ctx.author.send(embed=embed)
 
                 self.client.db.userglobal.update_one({"user_id":ctx.author.id},{"$inc":{"sonos": + 50}})
@@ -259,7 +256,7 @@ class level(Cog):
             if ctx.guild.id == 719555624374894692:
 
                 embed=Embed(title=f"Subiu para o level 16 em `{ctx.guild.name}`",
-                        description="Ganhou `50` sonos`",color=ctx.author.color,)
+                        description="Ganhou `50` sonos",color=ctx.author.color,)
                 await ctx.author.send(embed=embed)
 
                 self.client.db.userglobal.update_one({"user_id":ctx.author.id},{"$inc":{"sonos": + 50}})
@@ -273,7 +270,7 @@ class level(Cog):
             if ctx.guild.id == 719555624374894692:
 
                 embed=Embed(title=f"Subiu para o level 17 em `{ctx.guild.name}`",
-                        description="Ganhou `50` sonos`",color=ctx.author.color,)
+                        description="Ganhou `50` sonos",color=ctx.author.color,)
                 await ctx.author.send(embed=embed)
 
                 self.client.db.userglobal.update_one({"user_id":ctx.author.id},{"$inc":{"sonos": + 50}})
@@ -287,7 +284,7 @@ class level(Cog):
             if ctx.guild.id == 719555624374894692:
 
                 embed=Embed(title=f"Subiu para o level 18 em `{ctx.guild.name}`",
-                        description="Ganhou `50` sonos`",color=ctx.author.color,)
+                        description="Ganhou `50` sonos",color=ctx.author.color,)
                 await ctx.author.send(embed=embed)
 
                 self.client.db.userglobal.update_one({"user_id":ctx.author.id},{"$inc":{"sonos": + 50}})
@@ -301,7 +298,7 @@ class level(Cog):
             if ctx.guild.id == 719555624374894692:
 
                 embed=Embed(title=f"Subiu para o level 19 em `{ctx.guild.name}`",
-                        description="Ganhou `50` sonos`",color=ctx.author.color,)
+                        description="Ganhou `50` sonos",color=ctx.author.color,)
                 await ctx.author.send(embed=embed)
 
                 self.client.db.userglobal.update_one({"user_id":ctx.author.id},{"$inc":{"sonos": + 50}})
@@ -312,10 +309,14 @@ class level(Cog):
 
         if (analise['xp'] >= 39000 and analise['xp'] <= 41999) and (analise['level'] == 0):
             #level 20 local
+            self.client.db.userguild.update_one(
+                {"server_id":ctx.guild.id} and {"user_id":ctx.author.id},
+                {"$set":{"limite": 42000}, "$inc":{"level": + 1}})
+
             if ctx.guild.id == 719555624374894692:
 
                 embed=Embed(title=f"Subiu para o level 20 em `{ctx.guild.name}`",
-                        description="Ganhou `50` sonos`\nGanhou um um cargo exclusivo do level 20",color=ctx.author.color,)
+                        description="Ganhou `50` sonos\nGanhou um um cargo exclusivo do level 20",color=ctx.author.color,)
                 await ctx.author.send(embed=embed)
 
                 self.client.db.userglobal.update_one({"user_id":ctx.author.id},{"$inc":{"sonos": + 50}})
@@ -323,10 +324,6 @@ class level(Cog):
                 role = utils.get(ctx.guild.roles, id=773221220183048194)
                 user = ctx.author
                 await user.add_roles(role)
-
-            self.client.db.userguild.update_one(
-                {"server_id":ctx.guild.id} and {"user_id":ctx.author.id},
-                {"$set":{"limite": 42000}, "$inc":{"level": + 1}})
 
 def setup(client):
 

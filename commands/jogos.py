@@ -512,7 +512,7 @@ class jogos(Cog):
             user = self.client.db.userglobal.find_one({"user_id": ctx.author.id})
             user2 = self.client.db.userglobal.find_one({"user_id": target.id})
 
-            if target is None:
+            if target == None:
 
                 embed=Embed(title="Favor mencionar alguem para casar",
                             color=ctx.author.color,)
@@ -600,7 +600,7 @@ class jogos(Cog):
             user = self.client.db.userglobal.find_one({"user_id": ctx.author.id})
             user2 = self.client.db.userglobal.find_one({"user_id": target.id})
 
-            if target is None:
+            if target == None:
 
                 embed=Embed(title="Favor mencionar ela ou ele para o divórcio",
                             color=ctx.author.color,)
