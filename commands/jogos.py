@@ -512,7 +512,7 @@ class jogos(Cog):
             user = self.client.db.userglobal.find_one({"user_id": ctx.author.id})
             user2 = self.client.db.userglobal.find_one({"user_id": target.id})
 
-            if target == None:
+            if target is None:
 
                 embed=Embed(title="Favor mencionar alguem para casar",
                             color=ctx.author.color,)
@@ -600,7 +600,7 @@ class jogos(Cog):
             user = self.client.db.userglobal.find_one({"user_id": ctx.author.id})
             user2 = self.client.db.userglobal.find_one({"user_id": target.id})
 
-            if target == None:
+            if target is None:
 
                 embed=Embed(title="Favor mencionar ela ou ele para o divórcio",
                             color=ctx.author.color,)
@@ -614,13 +614,6 @@ class jogos(Cog):
 
                 await ctx.send(f"> {ctx.author.mention}", embed=embed)
 
-            elif user2["casal"] != ctx.author.id:
-
-                embed=Embed(title=f"Você não esta casado com a(o) {target}",
-                            color=ctx.author.color,)
-
-                await ctx.send(f"> {ctx.author.mention}", embed=embed)
-
             elif target == self.client.user:
 
                 embed=Embed(title="tu não casou comigo.",
@@ -628,7 +621,14 @@ class jogos(Cog):
 
                 await ctx.send(f"> {ctx.author.mention}", embed=embed)
 
-            elif (user["status"] != "solteiro") and (user["casal"] == "null"):
+            elif user["casal"] != target.id:
+
+                embed=Embed(title=f"Você não esta casado com a(o) {target}",
+                            color=ctx.author.color,)
+
+                await ctx.send(f"> {ctx.author.mention}", embed=embed)
+
+            elif user["casal"] == target.id:
 
                 embed=Embed(title=f"{ctx.author.name} esta pedindo divócio a(o) {target.name}",
                             description="Para aceitar o divórcio, reaja em ate `60s`",

@@ -70,18 +70,17 @@ class admins(Cog):
             infoa = ref.child(f"avisos/{ctx.guild.id}/{target.id}/aviso")
             avisar = infoa.get()
 
-            role1 = utils.get(ctx.guild.roles, name="1ª Aviso | Ayla")
-            role2 = utils.get(ctx.guild.roles, name="2ª Aviso | Ayla")
+            role1 = utils.get(ctx.guild.roles, name="1ª Advertência")
+            role2 = utils.get(ctx.guild.roles, name="2ª Advertência")
             user = target
 
             if role1 is None:
-                await ctx.guild.create_role(name="1ª Aviso | Ayla")
+                await ctx.guild.create_role(name="1ª Advertência")
                 pass
 
             if role2 is None:
-                await ctx.guild.create_role(name="2ª Aviso | Ayla")
+                await ctx.guild.create_role(name="2ª Advertência")
                 pass
-
 
             if avisar == None:
 
@@ -134,7 +133,7 @@ class admins(Cog):
 
                         infoa2.update({"aviso": num })
 
-                        role = utils.get(ctx.guild.roles, name="1ª Aviso | Ayla")
+                        role = utils.get(ctx.guild.roles, name="1ª Advertência")
 
                         await sleep(1)
                         
@@ -165,7 +164,7 @@ class admins(Cog):
 
                         infoa2.update({"aviso": num })
 
-                        role = utils.get(ctx.guild.roles, name="2ª Aviso | Ayla")
+                        role = utils.get(ctx.guild.roles, name="2ª Advertência")
 
                         await sleep(1)
 
@@ -225,15 +224,15 @@ class admins(Cog):
             infoa = ref.child(f"avisos/{ctx.guild.id}/{target.id}/aviso")
             avisar = infoa.get()
 
-            role1 = utils.get(ctx.guild.roles, name="1ª Aviso | Ayla")
-            role2 = utils.get(ctx.guild.roles, name="2ª Aviso | Ayla")
+            role1 = utils.get(ctx.guild.roles, name="1ª Advertência")
+            role2 = utils.get(ctx.guild.roles, name="2ª Advertência")
             user = target
 
             if role1 is None:
-                await ctx.guild.create_role(name="1ª Aviso | Ayla")
+                await ctx.guild.create_role(name="1ª Advertência")
                 pass
             if role2 is None:
-                await ctx.guild.create_role(name="2ª Aviso | Ayla")
+                await ctx.guild.create_role(name="2ª Advertência")
                 pass
 
             if avisar == None:
@@ -296,7 +295,7 @@ class admins(Cog):
 
                         infoa2.update({"aviso": num2 })
 
-                        role = utils.get(ctx.guild.roles, name="1ª Aviso | Ayla")
+                        role = utils.get(ctx.guild.roles, name="1ª Advertência")
 
                         await sleep(1)
                         
@@ -327,7 +326,7 @@ class admins(Cog):
 
                         infoa2.update({"aviso": num2 })
 
-                        role = utils.get(ctx.guild.roles, name="2ª Aviso | Ayla")
+                        role = utils.get(ctx.guild.roles, name="2ª Advertência")
 
                         await sleep(1)
 

@@ -35,5 +35,6 @@ class autorole(Cog):
 def setup(client):
 
     client.add_cog(autorole(client))
+    
 
     print("AutoRole ativo")
