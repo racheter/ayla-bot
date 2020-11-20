@@ -4,7 +4,7 @@ from discord import Game, Streaming
 from asyncio import sleep
 from itertools import cycle
 
-status = cycle(['Olaaa, use help/ajuda.', 'racheter.net', 'prefixo padrão: -', 'V: 0.0.9.5'])
+status = cycle(['Olaaa, use help/ajuda.', 'racheter.net', 'prefixo padrão: -', 'V: 0.0.9.6'])
 
 class ready(Cog):
 
@@ -16,7 +16,7 @@ class ready(Cog):
 
         self.change_status.start()
         print(f"{self.client.user.name} Esta online")
-        print("Versao alfa: 0.0.9.5")
+        print("Versao alfa: 0.0.9.6")
 
     @loop(seconds=10)
     async def change_status(self):
